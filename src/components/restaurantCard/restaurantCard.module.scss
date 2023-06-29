@@ -1,0 +1,160 @@
+@import "../../variables.scss";
+
+.restaurant-card {
+  position: relative;
+  border-bottom: solid 4px #f8f8f8;
+  padding: 1rem;
+  display: flex;
+
+  @media only screen and (min-width: 640px) {
+    border: solid 2px $secondary-color;
+    box-shadow: 0px 10px 8px -7px rgba(0, 0, 0, 0.1);
+    border-radius: $border-radius;
+    padding: 2rem;
+    max-width: 16rem;
+    display: block;
+  }
+}
+
+.image-container {
+  height: 110px;
+
+  img {
+    width: 110px;
+    height: 100%;
+    min-height: 100%;
+    min-width: 100%;
+    display: block;
+    object-fit: cover;
+    border-radius: $border-radius;
+  }
+
+  @media only screen and (min-width: 640px) {
+    height: 220px;
+    margin: 0 auto;
+
+    img {
+      width: 100%;
+    }
+  }
+}
+
+.restaurant-details-container {
+  display: flex;
+  flex-direction: column;
+  margin: 0 0 0 1rem;
+  line-height: 1.5;
+
+  @media only screen and (min-width: 640px) {
+    line-height: normal;
+    padding: 0;
+  }
+}
+
+.restaurant-title {
+  margin: 0;
+  text-align: left;
+  font-size: 1rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 12rem;
+
+  @media only screen and (min-width: 640px) {
+    margin: 1rem 0 0 0;
+    text-align: center;
+    font-size: 1.4rem;
+    border-bottom: solid 4px $secondary-color;
+    padding: 0 1rem 1rem 1rem;
+    max-width: unset;
+  }
+}
+
+.restaurant-details {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+
+  span {
+    font-size: 0.9rem;
+  }
+
+  @media only screen and (min-width: 640px) {
+    padding: 0 2rem;
+    flex-direction: row;
+    margin: 1rem 0 0 0;
+
+    span {
+      font-size: 1.2rem;
+    }
+  }
+}
+
+.restaurant-button {
+  background-image: linear-gradient(
+    to right,
+    #ee754e,
+    #ef7b4d,
+    #f0824d,
+    #f1884d,
+    #f18e4d,
+    #f19352,
+    #f29958,
+    #f29e5e,
+    #f3a56a,
+    #f4ab76,
+    #f4b182,
+    #f4b88e
+  );
+  border-radius: 0.5rem;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 600;
+  height: 2.4rem;
+  letter-spacing: 0.05rem;
+  width: 8rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+
+  @media only screen and (min-width: 640px) {
+    bottom: -22px;
+    left: 50%;
+    margin-left: -55px;
+    position: absolute;
+  }
+}
+
+/* Skeleton Loading State */
+
+.restaurant-card.loading {
+  background-color: #f8f8f8;
+}
+
+.restaurant-card.loading .image-container {
+  height: 110px;
+  width: 110px;
+  background-color: #e0e0e0;
+  border-radius: 0.5rem;
+
+  @media only screen and (min-width: 640px) {
+    height: 200px;
+    width: unset;
+  }
+}
+
+.restaurant-card.loading .restaurant-details-container {
+  @media only screen and (min-width: 640px) {
+    margin: 0;
+  }
+}
+
+.restaurant-card.loading .restaurant-title {
+  background-color: #e0e0e0;
+}
+
+.restaurant-card.loading .restaurant-button {
+  background-color: #e0e0e0;
+  background-image: none;
+}

@@ -1,0 +1,11 @@
+@import "../../variables.scss";
+
+.app-container {
+  max-width: 1020px;
+  margin: 4rem auto;
+}
+
+.h1 {
+  margin: 1rem 0 0 1rem;
+  color: $primary-color;
+}
